@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'New_User' => 'Nuevo Usuario',
+    'Existing_User' => 'Usuario Existente',
+    'Users' => 'Usuarios',
+    'Dashboard' => 'Panel',
+    'Customers' => 'Clientes',
+    'Information' => 'Información',
+    'E-Mail_Address' => 'Correo Electronico',
+    'Password' => 'Contraseña',
+    'Remember_Me' => 'Recuérdame',
+    'Login' => 'Acceder',
+    'Forgot_Your_Password' => '¿Olvidaste tu contraseña?',
+    'Register' => 'Registro',
+    'Name' => 'Nombre',
+    'Confirm_Password' => 'Confirmar Contraseña',
+    'Reset_Password' => 'Restablecer Contraseña',
+    'Please_Confirm_Your_Password' => 'Por favor confirme su contraseña antes de continuar.',
+    'Send_Password_Reset' => 'Enviar enlace para restablecer contraseña',
+    'Logout' => 'Cerrar Sesión',
+    'Verify_your_email_address' => 'Confirma tu correo electrónico',
+    'A_fresh_verification_link_has_been_sent_to_your_email_address' => 'Se ha enviado un nuevo enlace de verificación a tu correo electrónico.',
+    'Before_proceeding_please_check_your_email_for_a_verification_link' => 'Antes de poder continuar, por favor, confirma tu correo electrónico con el enlace que te hemos enviado.',
+    'If_you_did_not_receive_the_email' => 'Si no has recibido el email',
+    'click_here_to_request_another' => 'pulsa aquí para que te enviemos otro',
+];
