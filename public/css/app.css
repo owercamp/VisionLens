@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url(https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css);
+@import url(https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css);
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)

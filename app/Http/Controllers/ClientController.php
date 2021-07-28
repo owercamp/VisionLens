@@ -21,7 +21,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return \view('clients.client');
+        $clients = Client::all();
+        return \view('clients.client', compact('clients'));
     }
 
     /**

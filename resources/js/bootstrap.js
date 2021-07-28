@@ -11,6 +11,8 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+    require('datatables.net-dt');
+    require('datatables.net-responsive-dt');
 } catch (e) {}
 
 /**

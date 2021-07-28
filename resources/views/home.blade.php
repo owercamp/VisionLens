@@ -15,7 +15,7 @@
                     @endif
 
                     <div class="row">
-                        <div class=" col-sm-4 col-md-4 col-lg-3 col-xl-3">                        
+                        <div class="col-sm-4 col-md-4 col-lg-3 col-xl-3">                        
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-header" id="headingOne">
@@ -31,7 +31,7 @@
                                         data-parent="#accordionExample">
                                         <div class="card-body">
                                             <ul class="list-group list-group-flush text-center text-dark">
-                                                <a type="button" href="{{ route('client.index') }}"><li class="list-group-item">{{ __('messages.New_User') }}</li></a>
+                                                <a type="button"><li class="list-group-item">{{ __('messages.New_User') }}</li></a>
                                                 <a type="button"><li class="list-group-item">{{ __('messages.Existing_User') }}</li></a>
                                             </ul>
                                         </div>
@@ -49,7 +49,10 @@
                                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                         data-parent="#accordionExample">
                                         <div class="card-body">
-                                            
+                                            <ul class="list-group list-group-flush text-center text-dark">
+                                                <a type="button"><li class="list-group-item">{{ __('messages.New_Client') }}</li></a>
+                                                <a type="button" href="{{ route('client.index') }}"><li class="list-group-item">{{ __('messages.Existing_Clients') }}</li></a>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +75,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="">
+                        <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8 m-2 ml-3">
                             @yield('info')
                         </div>
                     </div>
