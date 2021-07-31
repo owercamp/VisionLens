@@ -26,4 +26,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/new-client', [\App\Http\Controllers\ClientController::class, 'index'])->name('client.index');
+Route::get('/client', [\App\Http\Controllers\ClientController::class, 'index'])->name('client.index');
+Route::get('/new-client', [\App\Http\Controllers\ClientController::class, 'create'])->name('client.new');
+Route::post('/new-client/new', [\App\Http\Controllers\ClientController::class, 'store'])->name('client.store');
+Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])->name('user');

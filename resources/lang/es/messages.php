@@ -32,4 +32,7 @@ return [
     'New_Client' => 'Nuevo Cliente',
     'Existing_Clients' => 'Clientes Existentes',
     'Number' => 'N° Numero',
+    'Actions' => 'Acciones',
+    'Edit' => 'Editar',
+    'Delete' => 'Eliminar',
 ];

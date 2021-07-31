@@ -10,6 +10,7 @@
             <th>{{ __('messages.Address_Client') }}</th>
             <th>{{ __('messages.Phone_Client') }}</th>
             <th>{{ __('messages.Referred_Client') }}</th>
+            <th>{{ __('messages.Actions') }}</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +22,11 @@
             <td>{{ $client->cli_ide }}</td>
             <td>{{ $client->cli_add }}</td>
             <td>{{ $client->cli_pho }}</td>
-            <td></td>
+            <td>{{ $client->cli_ref }}</td>
+            <td>
+                <a href="" title="{{ __('messages.Edit') }}"><i class="fas fa-edit btn btn-outline-secondary"></i></a>
+                <a href="" title="{{ __('messages.Delete') }}"><i class="fas fa-user-times btn btn-outline-danger"></i></a>
+            </td>
         </tr>
         @endforeach
     </tbody>

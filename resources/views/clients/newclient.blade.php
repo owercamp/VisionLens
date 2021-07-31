@@ -5,19 +5,19 @@
     <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="card">
-                <div class="card-header">{{ __('messages.Register') }}</div>
+                <div class="card-header text-dark">{{ __('messages.New_Client') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('client.store') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.Name_Client') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name_client" type="text" class="form-control @error('name_client') is-invalid @enderror" name="name_client" value="{{ old('name_client') }}" required autocomplete="name_client" autofocus>
 
-                                @error('name')
+                                @error('name_client')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -26,12 +26,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('messages.E-Mail_Address') }}</label>
+                            <label for="identity" class="col-md-4 col-form-label text-md-right">{{ __('messages.Identity_Client') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="identity_client" type="text" class="form-control @error('identity_client') is-invalid @enderror" name="identity_client" value="{{ old('identity_client') }}" required autocomplete="identity_client">
 
-                                @error('email')
+                                @error('identity_client')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -40,12 +40,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('messages.Password') }}</label>
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('messages.Address_Client') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" required autocomplete="address">
 
-                                @error('password')
+                                @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
