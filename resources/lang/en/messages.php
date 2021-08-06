@@ -41,7 +41,9 @@ return [
     'Successful' => 'successfully saved',
     'Deleteful' => 'successfully deleted',
     'Edit_Client' => 'Client Edition',
+    'Edit_User' => 'User Edition',
     'Delete_Client' => 'Client Deletion',
+    'Delete_User' => 'User Deletion',
     'Close' => 'Close',
     'Save_changes' => 'Save changes',
     'Error_Messages' => 'Record not found',
@@ -51,4 +53,5 @@ return [
     'No_Delete' => 'No, cancel',
     'Del_Cancel' => 'deletion canceled',
     'Destroy_Client' => 'Client Deleted',
+    'Destroy_User' => 'User Deleted',
 ];

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -58,9 +59,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $user = User::where('id',$request->id)->first();
+        if(!$user){
+            $message = __('messages.Error_Messages');
+            return back()->with('ErrorUpdate',$message);
+        }
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+        
+        $message = __('messages.Update_Register')." ".$user->name;
+        return redirect()->route('user.index')->with('SuccessUser',$message);
     }
 
     /**
@@ -69,8 +80,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, User $user)
     {
-        //
+        $user = User::where('id',$request->id)->first();
+        if(!$user){
+            $message = __('messages.Error_Messages');
+            return back()->with('ErrorUpdate',$message);
+        }
+        $user->destroy($request->id);
+        DB::statement('alter table users auto_increment=1');
+        $message = __('messages.Destroy_User').' '.$user->name;
+        return redirect()->route('user.index')->with("DeleteUser",$message);
     }
 }

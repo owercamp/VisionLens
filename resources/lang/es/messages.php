@@ -41,7 +41,9 @@ return [
     'Successful' => 'Guardado con Exito',
     'Deleteful' => 'Eliminado con Exito',
     'Edit_Client' => 'Edición Cliente',
+    'Edit_User' => 'Edición Usuario',
     'Delete_Client' => 'Eliminación Cliente',
+    'Delete_User' => 'Eliminación Usuario',
     'Close' => 'Cerrar',
     'Save_changes' => 'Guardar Cambios',
     'Error_Messages' => 'Registro no Encontrado',
@@ -51,4 +53,5 @@ return [
     'No_Delete' => 'No, cancelar',
     'Del_Cancel' => "Eliminación Cancelada",
     'Destroy_Client' => 'Cliente Eliminado',
+    'Destroy_User' => 'Usuario Eliminado',
 ];

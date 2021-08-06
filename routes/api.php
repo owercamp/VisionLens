@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Client;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,12 +20,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get("getEditClient",function(Request $request){
+Route::get("getClient",function(Request $request){
     $query = Client::where('cli_id',$request->data)->get();
     return response()->json($query);
-})->name("getEditClient");
+})->name("getClient");
 
-Route::get("getDeleteClient", function(Request $request){
-    $query = Client::where('cli_id',$request->data)->get();
+Route::get("getUser", function(Request $request){
+    $query = User::where('id',$request->data)->get();
     return response()->json($query);
-})->name("getDeleteClient");
+})->name("getUser");

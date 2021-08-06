@@ -302,7 +302,7 @@
     }
 
     function deleteClient(id) {
-        $.get("{{ route('getDeleteClient') }}", {
+        $.get("{{ route('getClient') }}", {
             data: id
         }, function(objectClient) {
             $('input[name=id]').val(objectClient[0]['cli_id']);
@@ -315,7 +315,7 @@
     }
 
     function editClient(id) {
-        $.get("{{ route('getEditClient') }}", {
+        $.get("{{ route('getClient') }}", {
             data: id
         }, function(objectClient) {
             $('input[name=id]').val(objectClient[0]['cli_id']);
