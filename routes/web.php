@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,8 +28,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/client', [\App\Http\Controllers\ClientController::class, 'index'])->name('client.index');
-Route::get('/new-client', [\App\Http\Controllers\ClientController::class, 'create'])->name('client.new');
-Route::post('/new-client/new', [\App\Http\Controllers\ClientController::class, 'store'])->name('client.store');
-Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])->name('user');
+Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+Route::get('/client', [ClientController::class, 'index'])->name('client.index');
+Route::get('/new-client', [ClientController::class, 'create'])->name('client.create');
+Route::post('/new-client/new', [ClientController::class, 'store'])->name('client.store');
+Route::post('/new-client/update',[ClientController::class, 'update'])->name('client.update');
+Route::post('/new-client/delete',[ClientController::class, 'destroy'])->name('client.destroy');
+Route::get('/user', [UserController::class, 'index'])->name('user.index');

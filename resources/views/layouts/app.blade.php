@@ -10,8 +10,6 @@
 
     <title>{{ config('app.name', 'Visual Lent') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,6 +19,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/configs.css') }}">
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/sweetalert.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -60,7 +62,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
-                                                    <i class="fas fa-sign-out-alt text-info"></i>
+                                    <i class="fas fa-sign-out-alt text-info"></i>
                                     {{ __('messages.Logout') }}
                                 </a>
 
@@ -78,7 +80,7 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
+    </div>    
+    @yield('script')
 </body>
-
 </html>

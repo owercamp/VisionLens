@@ -32,7 +32,7 @@
                                         <div class="card-body">
                                             <ul class="list-group list-group-flush text-center text-dark">
                                                 <a type="button" href="{{ route('register') }}"><li class="list-group-item">{{ __('messages.New_User') }}</li></a>
-                                                <a type="button" href="{{ route('user') }}"><li class="list-group-item">{{ __('messages.Existing_User') }}</li></a>
+                                                <a type="button" href="{{ route('user.index') }}"><li class="list-group-item">{{ __('messages.Existing_User') }}</li></a>
                                             </ul>
                                         </div>
                                     </div>
@@ -50,7 +50,7 @@
                                         data-parent="#accordionExample">
                                         <div class="card-body">
                                             <ul class="list-group list-group-flush text-center text-dark">
-                                                <a type="button" href="{{ route('client.new') }}"><li class="list-group-item">{{ __('messages.New_Client') }}</li></a>
+                                                <a type="button" href="{{ route('client.create') }}"><li class="list-group-item">{{ __('messages.New_Client') }}</li></a>
                                                 <a type="button" href="{{ route('client.index') }}"><li class="list-group-item">{{ __('messages.Existing_Clients') }}</li></a>
                                             </ul>
                                         </div>

@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use phpDocumentor\Reflection\Types\This;
+
 
 class ClientController extends Controller
 {
@@ -32,7 +35,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('clients.newclient');
+        $register = Client::all();
+        return view('clients.newclient', compact('register'));
     }
 
     /**
@@ -43,7 +47,23 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request;
+        $identity = \str_replace('.', '', $request->identity_client);
+
+        $findClient = Client::where('cli_ide', $identity)->first();
+        if ($findClient) {
+            $message = __('messages.Identity_Exists') . ': ' . $request->identity_client;
+            return back()->with('ErrorSuccess', $message);
+        }
+        Client::create([
+            'cli_name' => Str::ucfirst($request->name_client),
+            'cli_ide' => $identity,
+            'cli_add' => Str::lower($request->address),
+            'cli_pho' => $request->phone,
+            'cli_ref' => Str::ucfirst($request->referred)
+        ]);
+        $message = __('messages.Success_Client') . ': ' . $request->name_client;
+        return \redirect()->route('client.index')->with('SuccessClient', $message);
     }
 
     /**
@@ -75,9 +95,24 @@ class ClientController extends Controller
      * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request)
     {
-        //
+        $client = Client::where('cli_id', $request->id)->first();
+
+        if (!$client) {
+            $message = __('messages.error_messages');
+            return back()->with('ErrorUpdate', $message);
+        }
+
+        $client->cli_name = $request->name_client;
+        $client->cli_ide = $request->identity_client;
+        $client->cli_add = $request->address;
+        $client->cli_pho = $request->phone;
+        $client->cli_ref = $request->referred;
+        $client->save();
+
+        $message = __('messages.Update_Register').' '.$request->name_client;
+        return redirect()->route('client.index')->with('SuccessClient',$message);
     }
 
     /**
@@ -86,8 +121,16 @@ class ClientController extends Controller
      * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Client $client)
+    public function destroy(Request $request ,Client $client)
     {
-        //
+        $client = Client::where('cli_id', $request->id)->first();
+        if(!$client){
+            $message = __('messages.Error_Messages');
+            return back()->with('ErrorUpdate',$message);
+        }
+        $client->destroy($request->id);
+        DB::statement("alter table clients auto_increment=1");
+        $message = __('messages.Destroy_Client').' '.$client->cli_name;
+        return redirect()->route('client.index')->with("DeleteClient",$message);
     }
 }

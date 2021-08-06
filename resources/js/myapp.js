@@ -1,5 +1,14 @@
+
+require('./Jquery.all');
+require('datatables.net-dt');
+require('datatables.net-responsive-dt');
+require('jquery-mask-plugin');
+
 $(document).ready(function(){
     tables();
+    $('#identity_client').mask('#.##0',{reverse: true});
+    $('#phone').mask('(###) ######0');
+    
 });
 
 function tables(){
