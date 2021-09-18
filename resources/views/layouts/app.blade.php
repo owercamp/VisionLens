@@ -60,9 +60,9 @@
               </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <div class="d-inline-flex">
-                  <a href="{{url('locale/es')}}" class="dropdown-item text-center border-info border-right" style="max-width: 7rem;" id="LanguagesEs">Español</a>
-                  <a href="{{url('locale/en')}}" class="dropdown-item text-center" style="max-width: 7rem;" id="LanguagesEn">Inglés</a>
+                <div class="d-flex justify-content-center">
+                  <a href="{{url('locale/es')}}" class="dropdown-item text-center border-info border-right" style="max-width: 50%;" id="LanguagesEs">{{__('messages.Spanish')}}</a>
+                  <a href="{{url('locale/en')}}" class="dropdown-item text-center" style="max-width: 50%;" id="LanguagesEn">{{__('messages.English')}}</a>
                 </div>
                 <a class="dropdown-item text-center" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">

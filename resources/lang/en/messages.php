@@ -55,4 +55,10 @@ return [
   'Destroy_Client' => 'Client Deleted',
   'Destroy_User' => 'User Deleted',
   'Sales' => "Sales",
+  'Spanish' => 'Spanish',
+  'English' => 'English',
+  'Facture' => 'Invoice',
+  'NumberQuota' => 'N° Quota',
+  'ValueQuota' => 'Value Quota',
+  'Observations' => 'Observations',
 ];
