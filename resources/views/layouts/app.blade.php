@@ -86,11 +86,6 @@
     </main>
   </div>
   @yield('script')
-  <script>
-    $("#Languages").click(function() {
-
-    });
-  </script>
 </body>
 
 </html>
