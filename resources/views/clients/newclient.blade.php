@@ -23,7 +23,16 @@
         <div class="card-header text-dark">{{ __('messages.New_Client') }}</div>
 
         <div class="card-body">
-          @include('partials.client.newclient')
+          <form method="POST" action="{{ route('client.store') }}">
+            @include('partials.client.partialClient')
+            <div class="form-group row mb-0 justify-content-center">
+              <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-primary">
+                  {{ __('messages.Register') }}
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

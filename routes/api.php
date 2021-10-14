@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
   return $request->user();
 });
 
-Route::get("getClient", function (Request $request) {
+Route::post("getClient", function (Request $request) {
   $query = Client::where('cli_id', $request->data)->get();
   return response()->json($query);
 })->name("getClient");

@@ -7,12 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-    protected $table = 'clients';
+  use HasFactory;
 
-    protected $primaryKey = 'cli_id';
+  protected $table = 'clients';
 
-    protected $guarded = [];
+  protected $primaryKey = 'cli_id';
 
-    public $timestamps = true;
-    
+  protected $guarded = [];
+
+  public $timestamps = true;
 }

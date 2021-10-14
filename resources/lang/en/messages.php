@@ -29,6 +29,7 @@ return [
   'Address_Client' => 'Client Address',
   'Phone_Client' => 'Client Phone',
   'Referred_Client' => 'Client Referred',
+  'Email_Client' => 'Customer Mail',
   'New_Client' => 'New Client',
   'Existing_Clients' => 'Existing Clients',
   'Number' => 'N° Number',
@@ -46,6 +47,7 @@ return [
   'Delete_User' => 'User Deletion',
   'Close' => 'Close',
   'Save_changes' => 'Save changes',
+  'Save' => 'Save',
   'Error_Messages' => 'Record not found',
   'Update_Register' => 'Updated record',
   'Delete_Register' => 'Do you want to delete this record?',
@@ -61,4 +63,5 @@ return [
   'NumberQuota' => 'N° Quota',
   'ValueQuota' => 'Value Quota',
   'Observations' => 'Observations',
+  'Selection' => 'Select...'
 ];

@@ -85,9 +85,9 @@
         <form method="POST" action="{{ route('user.update') }}" id="formEditUser">
           @csrf
           <div class="form-group row justify-content-center">
-            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.Users') }}</label>
+            <label for="name" class="col-lg-4 col-form-label text-md-left text-lg-right">{{ __('messages.Users') }}</label>
 
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
               @error('name')
@@ -99,9 +99,9 @@
           </div>
 
           <div class="form-group row justify-content-center">
-            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('messages.E-Mail_Address') }}</label>
+            <label for="email" class="col-lg-4 col-form-label text-md-left text-lg-right">{{ __('messages.E-Mail_Address') }}</label>
 
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="cc-number">
 
               @error('email')
@@ -136,9 +136,9 @@
         <form method="POST" action="{{ route('user.destroy') }}" id="formDeleteUser">
           @csrf
           <div class="form-group row justify-content-center">
-            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.Users') }}</label>
+            <label for="name" class="col-lg-4 col-form-label text-md-left text-lg-right">{{ __('messages.Users') }}</label>
 
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" disabled>
 
               @error('name')
@@ -150,9 +150,9 @@
           </div>
 
           <div class="form-group row justify-content-center">
-            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('messages.E-Mail_Address') }}</label>
+            <label for="email" class="col-lg-4 col-form-label text-md-left text-lg-right">{{ __('messages.E-Mail_Address') }}</label>
 
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="cc-number" disabled>
 
               @error('email')

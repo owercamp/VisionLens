@@ -14,7 +14,7 @@ class SalesController extends Controller
    */
   public function index()
   {
-    return view('bussiness.sales');
+    //
   }
 
   /**
@@ -24,7 +24,7 @@ class SalesController extends Controller
    */
   public function create()
   {
-    //
+    return view('bussiness.sales');
   }
 
   /**
@@ -35,7 +35,19 @@ class SalesController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    request()->validate([
+      "identity_client" => "required",
+      "name_client" => "required|min:3",
+      "address" => "required",
+      "phone" => "required",
+      "facture" => "required",
+      "email_Client" => "required|email",
+      "quota" => "required",
+      "valueQuota" => "required",
+      "obs" => "required"
+    ]);
+
+    return $request;
   }
 
   /**
