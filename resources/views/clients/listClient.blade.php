@@ -70,7 +70,7 @@
       <td>{{ $client->cli_ref }}</td>
       <td>
         <button type="button" id="EditClient" class="btn btn-outline-secondary" title="{{ __('messages.Edit') }}" data-toggle="modal" onclick="editClient('{{$client->cli_id}}')"><i class="fas fa-edit"></i></button>
-        <button type="button" id="DeleteClient" class="btn btn-outline-danger" data-toggle="modal" title="{{ __('messages.Delete') }}" data-target="#ClientDelete" onclick="deleteClient('{{$client->cli_id}}')"><i class="fas fa-user-times"></i></button>
+        <button type="button" id="DeleteClient" class="btn btn-outline-danger" data-toggle="modal" title="{{ __('messages.Delete') }}" onclick="deleteClient('{{$client->cli_id}}')"><i class="fas fa-user-times"></i></button>
       </td>
     </tr>
     @endforeach
@@ -90,6 +90,7 @@
       <div class="modal-body justify-content-center">
         <form method="POST" action="{{ route('client.update') }}" id="formEditClient">
           @include('partials.client.partialClient')
+          <input type="hidden" name="id">
         </form>
       </div>
       <div class="modal-footer">
@@ -144,6 +145,7 @@
         $('input[name=phone]').val(response[0]['cli_pho']);
         $('input[name=email_Client]').val(response[0]['cli_ema']);
         $('select[name=referred]').val(response[0]['cli_ref']);
+        $('input[name=id]').val(response[0]['cli_id']);
       },
       complete() {
         $('#ClientEdit').modal();
@@ -162,19 +164,26 @@
       },
       success(response) {
         $('input[name=name_client]').val(response[0]['cli_name']);
-        $('input[name=identity_client]').val(response[0]['cli_ide']);
+        $('input[name=identity_client]').val(new Intl.NumberFormat().format(response[0]['cli_ide']));
         $('input[name=address]').val(response[0]['cli_add']);
         $('input[name=phone]').val(response[0]['cli_pho']);
         $('input[name=email_Client]').val(response[0]['cli_ema']);
         $('select[name=referred]').val(response[0]['cli_ref']);
+        $('input[name=id]').val(response[0]['cli_id']);
       },
       complete() {
-        $('#ClientEdit').modal();
+        $('input[name=name_client]').prop('disabled', true);
+        $('input[name=identity_client]').prop('disabled', true);
+        $('input[name=address]').prop('disabled', true);
+        $('input[name=phone]').prop('disabled', true);
+        $('input[name=email_Client]').prop('disabled', true);
+        $('select[name=referred]').prop('disabled', true);
+        $('#ClientDelete').modal();
       }
     })
   }
 
-  function deleteShow() {
+  const deleteShow = () => {
     Swal.fire({
       text: "{{ __('messages.Delete_Register')}}",
       showDenyButton: true,
@@ -196,7 +205,7 @@
     })
   }
 
-  function editClose() {
+  const editClose = () => {
     $('input[name=id]').val('');
     $('input[name=name_client]').val('');
     $('input[name=identity_client]').val('');
@@ -206,7 +215,7 @@
     $('select[name=referred]').val('');
   }
 
-  function formSubmit() {
+  const formSubmit = () => {
     $('#formEditClient').submit();
   }
 </script>

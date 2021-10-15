@@ -74,9 +74,10 @@
 
   <div class="col-lg-6">
     <select name="referred" id="referred" class="form-control @error('referred') is-invalid @enderror">
-      <option value="Visión lens">{{__('Visión lens')}}</option>
-      @foreach( $register as $client)
-      <option value="{{ $client->cli_name }}">{{ $client->cli_name }}</option>
+      <option value="">{{__('messages.Selection')}}</option>
+      <option value="Visión Lens">{{__('Visión Lens')}}</option>
+      @foreach($register as $activeClient)
+      <option value="{{$activeClient->cli_name}}">{{$activeClient->cli_name}}</option>
       @endforeach
     </select>
 

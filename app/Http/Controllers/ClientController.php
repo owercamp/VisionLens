@@ -48,7 +48,6 @@ class ClientController extends Controller
    */
   public function store(Request $request)
   {
-    // return $request;
     request()->validate([
       "name_client" => "required",
       "identity_client" => "required",
@@ -114,15 +113,14 @@ class ClientController extends Controller
       "identity_client" => "required",
       "address" => "required",
       "phone" => "required|min:9",
-      "email_CLient" => "required|email",
+      "email_Client" => "required|email",
       "referred" => "required"
     ]);
 
     $client = Client::where('cli_id', $request->id)->first();
 
-    dd($client->all());
     if (!$client) {
-      $message = __('messages.error_messages');
+      $message = __('messages.Error_Messages');
       return back()->with('ErrorUpdate', $message);
     }
 
