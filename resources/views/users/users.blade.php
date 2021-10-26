@@ -63,8 +63,8 @@
       <td>{{ $user->name }}</td>
       <td>{{ $user->email }}</td>
       <td>
-        <button type="button" class="btn btn-outline-secondary" title="{{ __('messages.Edit') }}" data-toggle="modal" data-target="#UserEdit" onclick="editUser('{{ $user->id }}')"><i class="fas fa-user-edit"></i></button>
-        <button type="button" class="btn btn-outline-danger" title="{{ __('messages.Delete') }}" data-toggle="modal" data-target="#UserDelete" onclick="deleteUser('{{ $user->id }}')"><i class="fas fa-trash-alt"></i></button>
+        <button type="button" class="btn btn-outline-secondary border border-dark" title="{{ __('messages.Edit') }}" data-toggle="modal" data-target="#UserEdit" onclick="editUser('{{ $user->id }}')"><i class="fas fa-user-edit"></i></button>
+        <button type="button" class="btn btn-outline-danger border border-dark" title="{{ __('messages.Delete') }}" data-toggle="modal" data-target="#UserDelete" onclick="deleteUser('{{ $user->id }}')"><i class="fas fa-trash-alt"></i></button>
       </td>
     </tr>
     @endforeach
@@ -115,8 +115,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="editClose()">{{ __('messages.Close') }}</button>
-        <button type="button" class="btn btn-primary" onclick="formSubmit()">{{ __('messages.Save_changes') }}</button>
+        <button type="button" class="btn btn-secondary border border-dark" data-dismiss="modal" onclick="editClose()">{{ __('messages.Close') }}</button>
+        <button type="button" class="btn btn-primary border border-dark" onclick="formSubmit()">{{ __('messages.Save_changes') }}</button>
       </div>
     </div>
   </div>
@@ -166,8 +166,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="editClose()">{{ __('messages.Close') }}</button>
-        <button type="button" class="btn btn-danger" onclick="formDeleteSubmit()">{{ __('messages.Delete') }}</button>
+        <button type="button" class="btn btn-secondary border border-dark" data-dismiss="modal" onclick="editClose()">{{ __('messages.Close') }}</button>
+        <button type="button" class="btn btn-danger border border-dark" onclick="formDeleteSubmit()">{{ __('messages.Delete') }}</button>
       </div>
     </div>
   </div>

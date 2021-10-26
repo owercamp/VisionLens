@@ -6,7 +6,7 @@
   <form action="" method="post" class="p-3 container shadow">
     @include('partials.sale.partialSale')
     <div class="d-flex justify-content-center">
-      <button class="btn btn-primary">{{__('messages.Save')}}</button>
+      <button class="btn btn-primary border border-dark">{{__('messages.Save')}}</button>
     </div>
   </form>
 </div>

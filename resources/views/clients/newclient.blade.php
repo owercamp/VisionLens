@@ -27,7 +27,7 @@
             @include('partials.client.partialClient')
             <div class="form-group row mb-0 justify-content-center">
               <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary border border-dark">
                   {{ __('messages.Register') }}
                 </button>
               </div>
