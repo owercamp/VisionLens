@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Client;
+use App\Models\Sales;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,5 +28,6 @@ class DatabaseSeeder extends Seeder
     ]);
 
     Client::factory(50)->create();
+    Sales::factory(20)->create();
   }
 }

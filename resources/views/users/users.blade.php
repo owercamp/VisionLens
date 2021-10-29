@@ -1,52 +1,8 @@
 @extends('home')
 
 @section('info')
-@if(session('SuccessUser'))
-<div class="alert alert-success text-center align-content-center" role="alert">
-  <label>{{session('SuccessUser')}}</label>
-</div>
-<script>
-  Swal.fire({
-    icon: 'success',
-    title: 'Success',
-    text: "{{ __('messages.Successful') }}",
-    timer: 1800,
-    showConfirmButton: false,
-    timerProgressBar: true,
-  });
-</script>
-@endif
-@if( session('ErrorUpdate'))
-<div class="alert alert-danger text-center align-content-center" role="alert">
-  <label>{{session('ErrorUpdate')}}</label>
-</div>
-<script>
-  Swal.fire({
-    icon: 'error',
-    title: 'Error',
-    text: "{{ __('messages.Oop...') }}",
-    timer: 1800,
-    showConfirmButton: false,
-    timerProgressBar: true,
-  });
-</script>
-@endif
-@if(session('DeleteUser'))
-<div class="alert alert-secondary text-center align-content-center" role="alert">
-  <label>{{session('DeleteUser')}}</label>
-</div>
-<script>
-  Swal.fire({
-    icon: 'success',
-    title: 'Success',
-    text: "{{ __('messages.Deleteful') }}",
-    timer: 1800,
-    showConfirmButton: false,
-    timerProgressBar: true,
-  });
-</script>
-@endif
-<table id="tableUser" class="display nowrap responsive text-center w-100">
+@include('partials.alerts')
+<table id="table" class="display nowrap responsive text-center w-100">
   <thead>
     <tr>
       <th>{{ __('messages.Number') }}</th>

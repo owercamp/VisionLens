@@ -69,6 +69,10 @@
     @enderror
   </div>
   <div class="col-lg-4">
+    <label>{{__('messages.Total')}}</label>
+    <input type="text" class="form-control form-control-sm @error('total') is-invalid @enderror" name="total" value="{{old('total')}}">
+  </div>
+  <div class="col-lg-4">
     <label>{{__('messages.NumberQuota')}}</label>
     <input type="text" class="form-control form-control-sm @error('quota') is-invalid @enderror" name="quota" value="{{old('quota')}}">
 

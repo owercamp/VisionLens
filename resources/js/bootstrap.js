@@ -7,11 +7,15 @@ window._ = require('lodash');
  */
 
 try {
-    window.Popper = require('popper.js').default;
-    window.$ = window.jQuery = require('jquery');
+  window.Popper = require('popper.js').default;
+  window.$ = window.jQuery = require('jquery');
+  window.mask = require('jquery-mask-plugin');
+  window.Swal = require('sweetalert2');
+  window.datatable = require('datatables.net-dt');
+  require('datatables.net-responsive-dt');
 
-    require('bootstrap');
-} catch (e) {}
+  require('bootstrap');
+} catch (e) { }
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

@@ -71,7 +71,7 @@
                   <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                       <ul class="list-group list-group-flush text-center text-dark">
-                        <a type="button" href="{{ route('sales.create') }}">
+                        <a type="button" href="{{ route('sales.index') }}">
                           <li class="list-group-item">{{ __('messages.Sales') }}</li>
                         </a>
                         <a type="button" href="{{ route('client.index') }}">

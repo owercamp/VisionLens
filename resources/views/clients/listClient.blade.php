@@ -1,52 +1,8 @@
 @extends('home')
 
 @section('info')
-@if(session('SuccessClient'))
-<div class="alert alert-success text-center align-content-center" role="alert">
-  <label>{{session('SuccessClient')}}</label>
-</div>
-<script>
-  Swal.fire({
-    icon: 'success',
-    title: 'Success',
-    text: "{{ __('messages.Successful') }}",
-    timer: 1800,
-    showConfirmButton: false,
-    timerProgressBar: true,
-  });
-</script>
-@endif
-@if( session('ErrorUpdate'))
-<div class="alert alert-danger text-center align-content-center" role="alert">
-  <label>{{session('ErrorUpdate')}}</label>
-</div>
-<script>
-  Swal.fire({
-    icon: 'error',
-    title: 'Error',
-    text: "{{ __('messages.Oop...') }}",
-    timer: 1800,
-    showConfirmButton: false,
-    timerProgressBar: true,
-  });
-</script>
-@endif
-@if(session('DeleteClient'))
-<div class="alert alert-secondary text-center align-content-center" role="alert">
-  <label>{{session('DeleteClient')}}</label>
-</div>
-<script>
-  Swal.fire({
-    icon: 'success',
-    title: 'Success',
-    text: "{{ __('messages.Deleteful') }}",
-    timer: 1800,
-    showConfirmButton: false,
-    timerProgressBar: true,
-  });
-</script>
-@endif
-<table id="tableClient" class="display responsive nowrap text-center justify-content-center" style="width:100%">
+@include('partials.alerts')
+<table id="table" class="display responsive nowrap text-center justify-content-center" style="width:100%">
   <thead>
     <tr>
       <th>{{ __('messages.Number')}}</th>
@@ -139,6 +95,7 @@
         data: id
       },
       success(response) {
+        console.log(response);
         $('input[name=name_client]').val(response[0]['cli_name']);
         $('input[name=identity_client]').val(response[0]['cli_ide']);
         $('input[name=address]').val(response[0]['cli_add']);

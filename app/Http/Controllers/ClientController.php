@@ -63,7 +63,7 @@ class ClientController extends Controller
 
     if ($findClient) {
       $message = __('messages.Identity_Exists') . ': ' . $request->identity_client;
-      return back()->with('ErrorSuccess', $message);
+      return back()->with('Error', $message);
     }
     Client::create([
       'cli_name' => Str::ucfirst($request->name_client),
@@ -74,7 +74,7 @@ class ClientController extends Controller
       'cli_ref' => Str::ucfirst($request->referred)
     ]);
     $message = __('messages.Success_Client') . ': ' . $request->name_client;
-    return \redirect()->route('client.index')->with('SuccessClient', $message);
+    return \redirect()->route('client.index')->with('Success', $message);
   }
 
   /**
@@ -121,7 +121,7 @@ class ClientController extends Controller
 
     if (!$client) {
       $message = __('messages.Error_Messages');
-      return back()->with('ErrorUpdate', $message);
+      return back()->with('Error', $message);
     }
 
     $client->cli_name = $request->name_client;
@@ -133,7 +133,7 @@ class ClientController extends Controller
     $client->save();
 
     $message = __('messages.Update_Register') . ' ' . $request->name_client;
-    return redirect()->route('client.index')->with('SuccessClient', $message);
+    return redirect()->route('client.index')->with('Update', $message);
   }
 
   /**
@@ -147,11 +147,11 @@ class ClientController extends Controller
     $client = Client::where('cli_id', $request->id)->first();
     if (!$client) {
       $message = __('messages.Error_Messages');
-      return back()->with('ErrorUpdate', $message);
+      return back()->with('Error', $message);
     }
     $client->destroy($request->id);
     DB::statement("alter table clients auto_increment=1");
     $message = __('messages.Destroy_Client') . ' ' . $client->cli_name;
-    return redirect()->route('client.index')->with("DeleteClient", $message);
+    return redirect()->route('client.index')->with("Delete", $message);
   }
 }

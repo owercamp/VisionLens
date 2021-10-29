@@ -16,13 +16,10 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
   <!-- Styles -->
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/configs.css') }}">
+  <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
   <!-- Scripts -->
-  <script src="{{ asset('js/app.js') }}"></script>
-  <script src="{{ asset('js/sweetalert.js') }}"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="{{ mix('js/app.js') }}"></script>
 </head>
 
 <body>

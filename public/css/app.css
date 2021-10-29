@@ -23612,3 +23612,13 @@ readers do not read off random characters that represent icons */
 .fa.fa-cab:before {
   content: "";
 }
+
+.accordion button:hover {
+  color: #dc143c;
+}
+
+.btn-config {
+  padding: 2rem;
+  width: 0.5em;
+  height: 0.5em;
+}

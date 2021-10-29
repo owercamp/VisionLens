@@ -20,6 +20,7 @@ class CreateSalesTable extends Migration
       $table->string('sal_pho', 20);
       $table->string('sal_add', 50);
       $table->string('sal_fact');
+      $table->string('sal_ema');
       $table->string('sal_total');
       $table->string('sal_qua');
       $table->string('sal_vqua');

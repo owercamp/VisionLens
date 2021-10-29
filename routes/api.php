@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Client;
+use App\Models\Sales;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -30,3 +31,22 @@ Route::get("getUser", function (Request $request) {
   $query = User::where('id', $request->data)->get();
   return response()->json($query);
 })->name("getUser");
+
+// *consulta cliente para venta
+Route::post("dataClient", function (Request $request) {
+  $query = Client::where('cli_ide', $request->data)->get();
+  return response()->json($query);
+})->name("dataClient");
+
+// *consulta ultima factura
+Route::get("getFacture", function () {
+  $query = Sales::orderBy('sal_fact', 'desc')->get();
+  $facture = (isset($query[0]['sal_fact'])) ? $query[0]['sal_fact'] : "VL-000000";
+  return response()->json($facture);
+})->name("getFacture");
+
+// ?consulta factura solicitada
+Route::post("getSale", function (Request $request) {
+  $query = Sales::where('id', $request->data)->get();
+  return response()->json($query);
+})->name("getSale");
